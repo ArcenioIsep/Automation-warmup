@@ -57,4 +57,4 @@ test('Wrong password 3 times (temporary block)', async ({ page }) => {
 
   // Verifica mensagem de bloqueio temporário
   await expect(page.getByText(/User temporarily blocked!/i)).toBeVisible();
-}, 60000); // Timeout de 60 segundos
+}, 15); // Timeout de 60 segundos
