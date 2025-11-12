@@ -52,10 +52,5 @@ test('Wrong password 3 times (temporary block)', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Type your username' }).fill('test');
   await page.getByRole('textbox', { name: 'Type your password' }).fill('password1');
   await page.getByRole('button', { name: 'Login' }).click();
-
-  /** 
-  await page.getByRole('textbox', { name: 'Type your username' }).fill('test');
-  await page.getByRole('textbox', { name: 'Type your password' }).fill('password1');
-  await page.getByRole('button', { name: 'Login' }).click();**/
   await expect(page.getByText(/User temporarily blocked!/i)).toBeVisible();
 });
